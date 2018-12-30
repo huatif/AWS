@@ -1,0 +1,11 @@
+provider "aws" {
+  region = "us-east-1"
+}
+resource "aws_s3_bucket" "b" {
+  bucket = "mywebbucket.com"
+  acl    = "public-read"
+  tags = {
+    Name        = "My bucket"
+    Environment = "static_web"
+  }
+}
